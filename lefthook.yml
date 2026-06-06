@@ -1,0 +1,51 @@
+# Git hooks for development workflow
+pre-commit:
+  parallel: true
+  commands:
+    format-markdown:
+      glob: '*.md'
+      run: npx prettier --write {staged_files}
+      stage_fixed: true
+
+    lint-markdown:
+      glob: '*.md'
+      run: npx markdownlint {staged_files}
+
+    lint-changelog:
+      glob: 'CHANGELOG.md'
+      run: npx markdownlint --config .markdownlint-changelog.json {staged_files}
+
+    format-js:
+      glob: '*.{js,mjs,ts,tsx,json}'
+      run: npx prettier --write {staged_files}
+      stage_fixed: true
+
+    lint-js:
+      glob: '*.{js,mjs,ts,tsx}'
+      run: npx eslint {staged_files} --max-warnings 0
+
+    format-csharp:
+      glob: 'Assets/**/*.cs'
+      exclude:
+        - 'Assets/Plugins/**'
+        - 'Assets/ThirdParty/**'
+        - 'Assets/**/External/**'
+        - 'Assets/**/Generated/**'
+        - 'Assets/**/Vendor/**'
+      run: dotnet tool restore && dotnet tool run csharpier format {staged_files}
+      stage_fixed: true
+
+    lint-csharp:
+      glob: 'Assets/**/*.cs'
+      exclude:
+        - 'Assets/Plugins/**'
+        - 'Assets/ThirdParty/**'
+        - 'Assets/**/External/**'
+        - 'Assets/**/Generated/**'
+        - 'Assets/**/Vendor/**'
+      run: dotnet format analyzers ./Lint.csproj --include {staged_files} --exclude-diagnostics CS0246 IDE0005 --verify-no-changes --verbosity minimal
+
+commit-msg:
+  commands:
+    commitlint:
+      run: npx commitlint --edit $1

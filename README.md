@@ -1,0 +1,86 @@
+# vroid-game-template
+
+## 💡 動機
+
+<img src="docs/images/navmesh.jpg" alt="NavMesh サンプル" />
+
+このプロジェクトは、VRoidアバターを扱うUnity向けのオープンソース（MITライセンス）テンプレートです。
+
+Unityプロジェクトの初期セットアップには多くのノウハウと時間が必要ですが、[CoderDojo](https://coderdojo.jp/)の活動を通じて、セットアップ作業に苦労するニンジャたちを見て、より簡単に始められる仕組みを作ろうと考えました。
+
+このテンプレートは、Unityを使い始めた誰もが一度は挑戦したい次のようなことを、すぐに実現できるよう設計されています。
+
+- VRoidで作成した自分だけの3DキャラクターをUnity上に表示する
+- キャラクターをキーボードやマウスで自由に操作する
+- 目標地点までキャラクターを歩かせたり走らせたりする
+
+さらに、以下のような時間のかかる作業を自動化・簡素化しています。
+
+- 各種パッケージの導入やTextMesh Proによる日本語表示など、面倒なセットアップを自動化
+- Unity Asset Storeのアセットなど、ライセンス上同梱できない素材も、手順に従って簡単に導入可能
+- ソースコードはMITライセンス、同梱アセットは無料素材のみを使用し、誰でも安心して利用できる
+
+---
+
+## 🚀 Quick Start
+
+1. [Release](https://github.com/naoji3x/vroid-game-template/releases)から最新版をダウンロード、またはリポジトリをクローン／テンプレートとして新規リポジトリを作成してください。
+2. Unity HubまたはUnity本体でプロジェクトを開きます。ちなみにUnityのバージョンはダウンロードファイル名に記載されています。
+   **注意:** Unity 6000.0 LTS以降でのみ動作します。必ず対応バージョンを使用してください。
+3. 「このプロジェクトの初期セットアップ手順」ダイアログが表示されるので、案内に従ってセットアップを完了してください。
+4. サンプルとして `Assets/TinyShrine/VRoid/Sample/Scenes` に 自動で目的地まで移動する`NavMeshSample`とキーボードで操作する`ThirdPersonSample`シーンが含まれています。これらを開いて実行し、動作を確認できます。
+5. サンプルを参考に、独自のシーンや機能を追加してプロジェクトを発展させましょう！`Assets/Scenes`にコピーして使うことをお勧めします。
+
+---
+
+## � 開発ドキュメント
+
+- [DEVELOPMENT.md](DEVELOPMENT.md) - 開発者向けガイド（アーキテクチャ、コーディング規約、実装詳細）
+- [CONTRIBUTING.md](CONTRIBUTING.md) - コントリビューション・ガイド（プルリクエスト、開発環境構築）
+
+---
+
+## �🛠 開発環境
+
+- Unity 6000 LTS Universal 3D Template
+- UniVRM 0.129.3 (VRM 1.0 対応)
+
+---
+
+## 📂 同梱アセットとライセンス
+
+### 1. ソースコード
+
+- **ライセンス:** MIT License
+- 詳細は [LICENSE](LICENSE.txt) ファイルを参照
+
+### 2. VRMファイル
+
+- **ライセンス:** 各VRMファイルに埋め込まれた利用許諾条件に従ってください。
+- 作者や利用条件は、VRMファイルの `meta` 情報から確認できます。
+- 本プロジェクト同梱の `SampleGirl.vrm` については以下の通りです：
+  - 利用許可：すべてのユーザー
+  - 表現の制限：暴力・性的・政治的・宗教的・反社会的表現は禁止
+  - 商用利用：個人・法人ともに可能
+  - 再配布：可能
+  - 改変および改変モデルの再配布：可能
+  - クレジット表記：不要
+- その他のVRMファイルを利用する場合は、それぞれのファイルの利用条件を必ずご確認ください。
+
+---
+
+## 🙏 Credits
+
+- [Unity 6000 LTS Universal 3D Template](https://unity.com) — Unity Standard License
+- [UniVRM](https://github.com/vrm-c/UniVRM) — MIT
+- [LitMotion](https://github.com/annulusgames/LitMotion) — MIT
+- [Smart Addresser](https://openupm.com/packages/jp.co.cyberagent.smartaddresser/) — MIT
+- [UniTask](https://github.com/Cysharp/UniTask) — MIT
+- [UIEffect](https://github.com/mob-sakai/UIEffect) — MIT
+- [VContainer](https://github.com/hadashiA/VContainer) — MIT
+- [VRM 1.0](https://vrm.dev/en/licenses/1.0/) — VRM Public License 1.0
+- [R3](https://github.com/Cysharp/R3) — MIT
+- [CSharpier](https://github.com/belav/csharpier) — MIT
+- [Unity.Analyzers](https://github.com/microsoft/Microsoft.Unity.Analyzers) — MIT
+- [Roslynator.Analyzers](https://github.com/dotnet/roslynator) — Apache-2.0
+- [StyleCop.Analyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) — MIT

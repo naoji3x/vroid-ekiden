@@ -156,3 +156,8 @@ Assets/Samples.meta
 Assets/StreamingAssets/Models/**
 Assets/StreamingAssets/KnowledgeBaseGame.zip
 Assets/StreamingAssets/KnowledgeBaseGame.zip.meta
+
+# Addressables build output
+
+/ServerData/
+/Assets/StreamingAssets/aa/
